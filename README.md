@@ -4,7 +4,7 @@ Mô tả - Description
 --------
 Sử dụng tiện ích này để tạo file ảnh của LiteSpeed Memcached -LSMemcached - LSMCD Docker
 
-Use this builder to build your own LiteSpeed Memcached - Lsmemcached -LSMCD Docker image.
+Use this builder to build your own LiteSpeed Memcached - LSMemcached -LSMCD Docker image.
 
 Yêu cầu - Prerequisites
 --------
