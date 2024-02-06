@@ -2,10 +2,10 @@ version: "3"
 services:
   lsmcd:
     image: workleast/lsmcd:latest
-    volumes:
-      - ./conf:/usr/local/lsmcd/conf
-      - ./data:/usr/local/lsmcd/data
-      - ./tmp:/tmp
+    #volumes:
+      #- ./conf:/usr/local/lsmcd/conf
+      #- ./data:/usr/local/lsmcd/data
+      #- ./tmp:/tmp
     ports:
       - "11211:11211"
     restart: always
