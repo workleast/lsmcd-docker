@@ -75,9 +75,9 @@ Theo mặc định - by default:
           - ./conf:/usr/local/lsmcd/conf
           - ./data:/usr/local/lsmcd/data
   ```
-- Để sử dụng Unix Socket thay cho giao thức TCP/IP, vui lòng thay đổi nội dung trong file "conf/node.conf" thành "CACHED.ADDR=UDS:///tmp/lsmcd.sock" và thay đổi khai báo "volumes" trong file "docker-compose.yml". Xin tham khảo các bước bên dưới để thực hiện.
+- Để sử dụng Unix Socket thay cho giao thức TCP/IP, vui lòng thay đổi nội dung trong file "conf/node.conf" thành "CACHED.ADDR=UDS:///tmp/lsmcd.sock" và thay đổi khai báo "volumes" và "ports" trong file "docker-compose.yml". Xin tham khảo các bước bên dưới để thực hiện.
 
-  In order to use Unix Socket instead of TCP/IP protocol, please modify 'conf/node.conf' with 'CACHED.ADDR=UDS:///tmp/lsmcd.sock' and uncomment "volumes" declaration in the 'docker-compose.yml' file. Please refer to the following steps to implement.
+  In order to use Unix Socket instead of TCP/IP protocol, please modify 'conf/node.conf' with 'CACHED.ADDR=UDS:///tmp/lsmcd.sock' and alter "volumes" and "ports" declarations in the 'docker-compose.yml' file. Please refer to the following steps to implement.
    ```
     - nano conf/node.conf
         #CACHED.ADDR=0.0.0.0:11211
@@ -86,9 +86,12 @@ Theo mặc định - by default:
         volumes:
           - ./conf:/usr/local/lsmcd/conf
           - ./tmp:/tmp
+        #ports:
+          #- "11211:11211"
   ```
 - Để kiểm tra kết nối Unix Socket, xin thực hiện lệnh sau:
-  To test Unix Socket connection, please execute below commands:
+  
+  To test Unix Socket connection, please execute the below commands:
   ```
     - nc -U tmp/lsmcd.sock -C
     - stats
