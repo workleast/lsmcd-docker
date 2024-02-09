@@ -27,7 +27,7 @@ Cách kiểm tra - How to test
 ```
 - telnet 127.0.0.1 11211
 - stats
-- stop
+- quit
 ```
 
 Hướng dẫn tự tạo file ảnh - How to build your own image
