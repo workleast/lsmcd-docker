@@ -13,16 +13,12 @@ Yêu cầu - Prerequisites
 Chạy trực tiếp từ Docker Hub - Pull directly from Docker Hub
 --------
 ```
-docker pull workleast/lsmcd
-```
-```
 docker run --rm --name lsmcd --shm-size 512m -d -p 11211:11211 workleast/lsmcd:latest
 ```
 ## Sử dụng docker compose - Use docker compose
 ```
-- mkdir lsmcd-docker
+- git clone https://github.com/workleast/lsmcd-docker.git
 - cd lsmcd-docker
-- wget https://github.com/workleast/lsmcd-docker/raw/main/docker-compose.yml
 - docker compose up -d
 ```
 
@@ -53,10 +49,8 @@ Theo mặc định - by default:
 
   The LSMCD container will use the default configuration file. If you need to amend to it, please follow the below instructions
   ```
-    - mkdir -p lsmcd-docker/conf
-    - cd lsmcd-docker/
-    - wget https://github.com/workleast/lsmcd-docker/raw/main/docker-compose.yml
-    - wget -P ./conf https://github.com/workleast/lsmcd/raw/lsmcd-docker-image/dist/conf/node.conf
+    - git clone https://github.com/workleast/lsmcd-docker.git
+    - cd lsmcd-docker
     - nano docker-compose.yml
         volumes:
           - ./conf:/usr/local/lsmcd/conf
