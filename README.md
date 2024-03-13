@@ -13,7 +13,7 @@ Yêu cầu - Prerequisites
 Chạy trực tiếp từ Docker Hub - Pull directly from Docker Hub
 --------
 ```
-docker run --rm --name lsmcd --shm-size 512m -d -p 11211:11211 workleast/lsmcd:latest
+docker run --name lsmcd --shm-size 512m -d -p 11211:11211 --restart always workleast/lsmcd:latest
 ```
 ## Sử dụng docker compose - Use docker compose
 ```
