@@ -1,5 +1,5 @@
-FROM ubuntu:jammy-20240125
-LABEL maintainer="workleast@yahoo.com"
+FROM ubuntu:bionic
+LABEL maintainer="workleast.com"
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -15,6 +15,7 @@ RUN apt-get update \
  libsasl2-dev libpcre3-dev sasl2-bin
 
 COPY entrypoint.sh /sbin/entrypoint.sh
+COPY conf/node.conf /usr/local/lsmcd/conf/node.conf
 RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 11211/tcp 11211/udp
