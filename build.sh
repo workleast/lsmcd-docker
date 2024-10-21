@@ -1,1 +1,1 @@
-docker build -t workleast/lsmcd .
+docker build --no-cache -t workleast/lsmcd .
