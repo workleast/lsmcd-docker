@@ -12,7 +12,7 @@ RUN apt-get update \
  && rm -R /lsmcd \
  && rm -rf /var/lib/apt/lists/* \
  && apt-get remove -y git build-essential zlib1g-dev libexpat1-dev openssl libssl-dev \
- libsasl2-dev libpcre3-dev sasl2-bin
+ libsasl2-dev libpcre3-dev sasl2-bin systemd
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 COPY conf/node.conf /usr/local/lsmcd/conf/node.conf
