@@ -4,8 +4,8 @@ LABEL maintainer="workleast.com"
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
  git build-essential zlib1g-dev libexpat1-dev openssl libssl-dev \
- libsasl2-dev libpcre3-dev sasl2-bin \
- && git clone -b lsmcd-docker-image https://github.com/workleast/lsmcd.git \
+ libsasl2-dev libpcre3-dev sasl2-bin systemd \
+ && git clone https://github.com/litespeedtech/lsmcd.git \
  && cd lsmcd && ./fixtimestamp.sh \
  && ./configure CFLAGS=" -O3" CXXFLAGS=" -O3" \
  && make && make install \
